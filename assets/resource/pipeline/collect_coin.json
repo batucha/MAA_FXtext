@@ -1,0 +1,108 @@
+{
+    "晶币_领取+排班": {
+        "next": [
+            "晶币_回到主界面",
+            "晶币_检查主界面"
+        ],
+        "interrupt": [
+            "关闭_快速领取",
+            "关闭_聊天框",
+            "关闭_排班",
+            "关闭_排班_确定",
+            "关闭_签到"
+        ]
+    },    
+    "晶币_回到主界面": {
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": "Click",
+        "next": "晶币_检查主界面"
+    },
+    "晶币_检查主界面": {
+        "recognition": "TemplateMatch",
+        "template": "主页_出击.png",
+        "action": "DoNothing",
+        "next": "晶币_点击快速领取"
+    },
+    "晶币_点击快速领取": { 
+        "recognition": "TemplateMatch",
+        "template": "主页_快速领取.png",
+        "action": "Click",
+        "next": "晶币_点击全部领取",
+        "interrupt": [
+            "晶币_点击快速领取"
+        ]
+    },  
+    "晶币_点击全部领取":{
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "快速领取_晶币_全部领取.png",
+        "action": "Click",
+        "roi" : [1097,145,138,90],
+        "next": "晶币_领取确定返回" 
+    },
+    "晶币_领取确定返回": {
+        "post_delay": 1000,
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": 4
+            }
+        },
+        "next": "晶币_点击便利店"
+    },
+    "晶币_点击便利店": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "港区_便利店.png",
+        "action": "Click",
+        "next": "晶币_排班_检测"
+    },
+    "晶币_排班_检测": {
+        "recognition": "TemplateMatch",
+        "template": "港区_便利店_排班.png",
+        "action": "DoNothing",
+        "next": "晶币_排班",
+        "interrupt": "晶币_点击便利店"
+    },  
+    "晶币_排班": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "港区_便利店_排班.png",
+        "action": "Click",
+        "next": "晶币_排班_点击编辑"
+    },
+    "晶币_排班_点击编辑": {
+        "recognition": "TemplateMatch",
+        "template": "港区_便利店_排班_编辑.png",
+        "action": "Click",
+        "next": "晶币_排班_点击确定"
+    },
+    "晶币_排班_点击确定": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "港区_便利店_排班_确定.png",
+        "action": "Click",
+        "next": "晶币_排班_点击进行排班A"
+    },
+    "晶币_排班_点击进行排班A": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "港区_便利店_排班_进行排班.png",
+        "action": "Click",
+        "next": "晶币_排班_点击进行排班确信_确定A"
+    },
+    "晶币_排班_点击进行排班确信_确定A": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "港区_便利店_排班_点击进行排班_确定.png",
+        "action": "Click",
+        "next": "晶币_排班_结束任务"
+    },
+    "晶币_排班_结束任务": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": "Click"
+    }    
+}

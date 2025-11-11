@@ -1,0 +1,147 @@
+{
+    "竞技": {
+        "next": [
+            "竞技_回到主界面",
+            "竞技_检查主界面"
+        ],
+        "interrupt": [
+            "关闭_快速领取",
+            "关闭_聊天框"
+        ]
+    },
+    "竞技_回到主界面": {
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": {
+            "type": "Click",
+            "roi": [
+                181,
+                0,
+                119,
+                78
+            ]
+        },
+        "next": "竞技_检查主界面"
+    },
+    "竞技_检查主界面": {
+        "recognition": "TemplateMatch",
+        "template": "主页_出击.png",
+        "action": "DoNothing",
+        "next": "竞技_出击"
+    },
+    "竞技_出击": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "主页_出击.png",
+        "action": "Click",
+        "next": "竞技_点击竞技",
+        "interrupt": [
+            "竞技_出击"
+        ]
+    },
+    "竞技_点击竞技": {
+        "post_delay": 1000,      
+        "recognition": "TemplateMatch",
+        "template": "任务_竞技.png",
+        "action": "Click",
+        "next": "竞技_点击普通竞技"
+    },
+    "竞技_点击普通竞技": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "任务_竞技_竞技.png",
+        "action": "Click",
+        "next":"竞技_战斗"
+    },
+
+
+
+
+
+    "竞技_战斗": {
+        "post_delay": 1000,
+        "next": [
+            "竞技_确认竞技次数清空"
+        ],
+        "interrupt": [
+            "竞技_点击战斗",
+            "竞技_点击_点击继续",
+            "竞技_点击普通竞技"
+        ]
+    },
+
+
+
+
+    "竞技_点击战斗":{
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": ["竞技_LV.png"],
+                "roi" : [579,137,72,39]
+            }
+        },
+        "action": "Click",
+        "next":"竞技_启航"
+    },
+    "竞技_启航":{
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": ["竞技_启航.png"]
+            }
+        },
+        "action": "Click",
+        "next":"竞技_持续结束检测"
+    },
+
+
+
+    "竞技_持续结束检测": {
+        "post_delay": 1000,
+        "pre_wait_freezes": 600000,
+        "recognition": "TemplateMatch",
+        "template": "竞技_点击继续.png",
+        "next": "竞技_点击_点击继续",
+        "on_error":[
+            "竞技_持续结束检测"
+        ]
+    },
+
+    "竞技_点击_点击继续":{
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "竞技_点击继续.png",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [0,0,1,1]
+            }
+        },
+        "interrupt":"竞技_点击_点击继续",
+        "next":"竞技_战斗"
+    },
+
+    "竞技_确认竞技次数清空":{
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "竞技_竞技次数清空.png",
+        "next": "竞技_二次确认竞技次数清空"        
+    },
+    "竞技_二次确认竞技次数清空":{
+        "recognition": "TemplateMatch",
+        "template": "竞技_竞技次数清空.png",
+        "next": "竞技_结束任务"
+    },
+
+    "竞技_结束任务":{
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": {
+            "type": "Click",
+            "roi": [181,0,119,78]
+        }        
+    }
+}

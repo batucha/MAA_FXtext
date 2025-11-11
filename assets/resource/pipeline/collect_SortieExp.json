@@ -1,0 +1,97 @@
+{
+    "远征_领取": {
+        "next": [
+            "远征exp_回到主界面",
+            "远征exp_检查主界面"
+        ],
+        "interrupt": [
+            "关闭_快速领取",
+            "关闭_聊天框"
+        ]
+    },    
+    "远征exp_回到主界面": {
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": {
+            "type": "Click",
+            "roi": [
+                181,
+                0,
+                119,
+                78
+            ]
+        },
+        "next": "远征exp_检查主界面"
+    },
+    "远征exp_检查主界面": {
+        "recognition": "TemplateMatch",
+        "template": "主页_出击.png",
+        "action": "DoNothing",
+        "next": "远征exp_点击快速领取"
+    },
+    "远征exp_点击快速领取": { 
+        "recognition": "TemplateMatch",
+        "template": "主页_快速领取.png",
+        "action": "Click",
+        "next": "远征exp_点击远征",
+        "interrupt": [
+            "远征exp_点击快速领取"
+        ]
+    },
+    "远征exp_点击远征": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征.png",
+        "action": "Click",
+        "next": "远征exp_全部领取_检测"
+    },
+    "远征exp_全部领取_检测": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "DoNothing",
+        "next": "远征exp_全部领取"
+    },
+    "远征exp_全部领取": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "Click",
+        "next": "远征exp_全部领取1"
+    },
+    "远征exp_全部领取1": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "Click",
+        "next": "远征exp_全部领取2"
+    },
+    "远征exp_全部领取2": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "Click",
+        "next": "远征exp_全部领取3"
+    },
+    "远征exp_全部领取3": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "Click",
+        "next": "远征exp_全部领取4"
+    },
+    "远征exp_全部领取4": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "Click",
+        "next": "远征exp_全部领取5"
+    },
+    "远征exp_全部领取5": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "Click",
+        "next": "远征exp_返回主页"
+    },
+    "远征exp_返回主页": {
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": {
+            "type": "Click",
+            "roi": [181,0,119,78]
+        }
+    }
+}

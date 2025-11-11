@@ -1,0 +1,90 @@
+{
+    "活动_自律出击_旧": {
+        "next": [
+            "活动_回到主界面",
+            "活动_检查主界面"
+        ],
+        "interrupt": [
+            "关闭_快速领取",
+            "关闭_聊天框"
+        ]
+    },    
+    "活动_回到主界面": {
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": {
+            "type": "Click",
+            "roi": [
+                181,
+                0,
+                119,
+                78
+            ]
+        },
+        "next": "活动_检查主界面"
+    },
+    "活动_检查主界面": {
+        "recognition": "TemplateMatch",
+        "template": "主页_出击.png",
+        "action": "DoNothing",
+        "next": "活动_点击活动"
+    },
+    "活动_点击活动": { 
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "主页_出击.png",
+        "action": {
+            "type":"Click",
+            "param": {
+                "target_offset": [-13, -93, -24, -12]
+            }
+        },
+        "next": "活动_点击白出击",
+        "interrupt": [
+            "活动_点击活动"
+        ]
+    },
+    "活动_点击白出击": {
+        "recognition": "TemplateMatch",
+        "template": "活动_白出击.png",
+        "action": "Click",
+        "next": "活动_启航"
+    },
+    "活动_启航": {
+        "next": [
+            "活动_点击启航"
+        ],
+        "interrupt": [
+            "活动_点击活动回港"
+        ]
+    },
+    "活动_点击活动回港":{
+        "recognition": "TemplateMatch",
+        "template": "活动_活动回港.png",
+        "action": "Click",
+        "next": "活动_点击活动回港确定"
+    },
+    "活动_点击活动回港确定":{
+        "recognition": "TemplateMatch",
+        "template": "活动_活动回港确定.png",
+        "action": "Click",
+        "next": "活动_点击启航"           
+    },
+    "活动_点击启航":{
+        "recognition": "TemplateMatch",
+        "template": "活动_启航.png",
+        "action": "Click",
+        "next": "活动_点击托管"
+    },
+    "活动_点击托管":{
+        "recognition": "TemplateMatch",
+        "template": "活动_托管.png",
+        "action": "Click",
+        "next": "活动_点击开始托管"
+    },
+    "活动_点击开始托管":{
+        "recognition": "TemplateMatch",
+        "template": "活动_开始托管.png",
+        "action": "Click"
+    }
+}

@@ -1,0 +1,172 @@
+{
+    "演习": {
+        "next": [
+            "演习_回到主界面",
+            "演习_检查主界面"
+        ],
+        "interrupt": [
+            "关闭_快速领取",
+            "关闭_聊天框"
+        ]
+    },    
+    "演习_回到主界面": {
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": {
+            "type": "Click",
+            "roi": [181,0,119,78]
+        },
+        "next": "演习_检查主界面"
+    },
+    "演习_检查主界面": {
+        "recognition": "TemplateMatch",
+        "template": "主页_出击.png",
+        "action": "DoNothing",
+        "next": "演习_出击"
+    },
+
+
+
+
+
+    "演习_出击": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "主页_出击.png",
+        "action": "Click",
+        "next": "演习_点击演习",
+        "interrupt": [
+            "演习_出击"
+        ]
+    },
+    "演习_点击演习": {      
+        "recognition": "TemplateMatch",
+        "template": "任务_演习.png",
+        "action": "Click",
+        "next": "演习_战斗"
+    },
+
+
+
+
+
+    "演习_战斗": {
+        "next": [
+            "演习_确认刷新次数清空"
+        ],
+        "interrupt": [
+            "演习_点击连续挑战"
+        ]
+    },
+
+
+
+
+    "演习_点击连续挑战": {
+        "recognition": "TemplateMatch",
+        "template": "演习_连续挑战.png",
+        "action": "Click",
+        "next": "演习_点击全选"
+    },
+    "演习_点击全选": {
+        "recognition": "TemplateMatch",
+        "template": "演习_全选.png",
+        "action": "Click",
+        "next": "演习_全选检查"
+    },
+    "演习_全选检查": {
+        "recognition": "TemplateMatch",
+        "template": "演习_全选打钩.png",
+        "action": "DoNothing",
+        "next": "演习_开始托管",
+        "interrupt": [
+            "演习_点击全选"
+        ]
+    },
+    "演习_开始托管": {
+        "recognition": "TemplateMatch",
+        "template": "演习_开始托管.png",
+        "action": "Click",
+        "next": "演习_持续结束检测"
+    },
+
+
+
+
+
+    "演习_持续结束检测": {
+        "timeout": 600000,
+        "recognition": "TemplateMatch",
+        "template": "演习_演习连续挑战结束.png",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [0,0,1,1]
+            }
+        },
+        "next": "演习_更换对手"
+    },
+    "演习_更换对手": {
+        "recognition": "TemplateMatch",
+        "template": "演习_更换对手.png",
+        "action": "Click",
+        "interrupt":[
+            "演习_确认更换对手"
+        ],
+        "next": [
+            "演习_重新战斗"
+        ]
+    },
+    "演习_确认更换对手": {
+        "recognition": "TemplateMatch",
+        "template": "演习_确定更换对手.png",
+        "action": "Click"
+    },
+    "演习_重新战斗": {
+        "recognition": "TemplateMatch",
+        "template": "演习_更换对手_灰色.png",
+        "next":"演习_战斗"
+    },
+
+
+
+    "演习_确认刷新次数清空": {
+        "recognition": "TemplateMatch",
+        "template": "演习_刷新次数清空.png",
+        "next": "演习_二次确认刷新次数清空"
+    },
+    "演习_二次确认刷新次数清空": {
+        "recognition": "TemplateMatch",
+        "template": "演习_刷新次数清空.png",
+        "next": "演习_确认对战列表完毕",
+        "interrupt":[
+            "演习_点击连续挑战"
+        ]
+    },
+
+
+
+
+    "演习_确认对战列表完毕": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [1096,591,70,63],
+                "expected": "成"
+            }
+        },
+        "next": [
+            "演习_结束任务"
+        ]
+    },
+
+
+    "演习_结束任务": {
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": {
+            "type": "Click",
+            "roi": [181,0,119,78]
+        }
+    }
+}

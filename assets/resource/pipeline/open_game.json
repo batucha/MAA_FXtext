@@ -1,0 +1,29 @@
+{
+    "启动游戏": {
+        "recognition": "TemplateMatch",
+        "template": "启动_桌面图标.png",
+        "action": "Click",
+        "next": [
+            "等待加载"
+        ]
+    },
+    "等待加载": {
+        "action": "DoNothing",
+        "pre_delay": 50000,
+        "next": ["点击屏幕开始"]
+    },
+    "点击屏幕开始": {
+        "recognition": "TemplateMatch",
+        "template": "启动_点击屏幕开始.png",
+        "action": "Click",
+        "next": [
+            "服务器界面点击"
+        ]
+    },
+    "服务器界面点击": {
+        "recognition": "TemplateMatch",
+        "template": "启动_服务器.png",
+        "action": "Click",
+        "target": "点击屏幕开始"
+    }
+}

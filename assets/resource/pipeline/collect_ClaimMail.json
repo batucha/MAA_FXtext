@@ -1,0 +1,65 @@
+{
+    "领取邮件": {
+        "next": [
+            "领取邮件_回到主界面",
+            "领取邮件_检查主界面"
+        ],
+        "interrupt": [
+            "关闭_快速领取",
+            "关闭_聊天框"
+        ]
+    },    
+    "领取邮件_回到主界面": {
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": {
+            "type": "Click",
+            "roi": [
+                181,
+                0,
+                119,
+                78
+            ]
+        },
+        "next": "领取邮件_检查主界面"
+    },
+    "领取邮件_检查主界面": {
+        "recognition": "TemplateMatch",
+        "template": "主页_出击.png",
+        "action": "DoNothing",
+        "next": "领取邮件_点击邮件"
+    },
+    "领取邮件_点击邮件":{
+        "recognition":"TemplateMatch",
+        "template": "主页_邮件.png",
+        "action": "Click",
+        "next": "领取邮件_点击全部领取"
+    },
+    "领取邮件_点击全部领取":{
+        "recognition": "TemplateMatch",
+        "template": "邮件_全部领取.png",
+        "action": "Click",
+        "next": "领取邮件_点击全部领取_确定"
+    },
+    "领取邮件_点击全部领取_确定":{
+        "recognition": "TemplateMatch",
+        "template": "邮件_确定.png",
+        "action": "Click",
+        "next": "领取邮件_结束任务"
+    },
+    "领取邮件_结束任务": {
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": {
+            "type": "Click",
+            "roi": [181,0,119,78]
+        },
+        "next":"领取邮件_结束任务_检查主界面"
+    },
+    "领取邮件_结束任务_检查主界面": {
+        "recognition": "TemplateMatch",
+        "template": "主页_出击.png",
+        "action": "DoNothing",
+        "interrupt": "领取邮件_结束任务"
+    },
+}

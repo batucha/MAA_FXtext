@@ -1,0 +1,107 @@
+{
+    "石油_领取+排班": {
+        "next": [
+            "石油_回到主界面",
+            "石油_检查主界面"
+        ],
+        "interrupt": [
+            "关闭_快速领取",
+            "关闭_聊天框",
+            "关闭_排班",
+            "关闭_排班_确定",
+            "关闭_签到"
+        ]
+    },    
+    "石油_回到主界面": {
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": "Click",
+        "next": "石油_检查主界面"
+    },
+    "石油_检查主界面": {
+        "recognition": "TemplateMatch",
+        "template": "主页_出击.png",
+        "action": "DoNothing",
+        "next": "石油_点击快速领取"
+    },
+    "石油_点击快速领取": { 
+        "recognition": "TemplateMatch",
+        "template": "主页_快速领取.png",
+        "action": "Click",
+        "next": "石油_点击全部领取",
+        "interrupt": [
+            "石油_点击快速领取"
+        ]
+    },  
+    "石油_点击全部领取":{
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "快速领取_石油_全部领取.png",
+        "action": "Click",
+        "next": "石油_领取确定返回"  
+    },
+    "石油_领取确定返回": {
+        "post_delay": 1000,
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": 4
+            }
+        },
+        "next": "石油_点击炼油厂"
+    },
+    "石油_点击炼油厂": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "港区_炼油厂.png",
+        "action": "Click",
+        "next": "石油_排班_检测"
+    },
+    "石油_排班_检测": {
+        "recognition": "TemplateMatch",
+        "template": "港区_炼油厂_排班.png",
+        "action": "DoNothing",
+        "next": "石油_排班",
+        "interrupt": "石油_点击炼油厂"
+    },  
+    "石油_排班": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "港区_炼油厂_排班.png",
+        "action": "Click",
+        "next": "石油_排班_点击编辑"
+    },
+    "石油_排班_点击编辑": {
+        "recognition": "TemplateMatch",
+        "template": "港区_炼油厂_排班_编辑.png",
+        "action": "Click",
+        "next": "石油_排班_点击确定"
+    },
+    "石油_排班_点击确定": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "港区_炼油厂_排班_确定.png",
+        "action": "Click",
+        "next": "石油_排班_点击进行排班A"
+    },
+    "石油_排班_点击进行排班A": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "港区_炼油厂_排班_进行排班.png",
+        "action": "Click",
+        "next": "石油_排班_点击进行排班确信_确定A"
+    },
+    "石油_排班_点击进行排班确信_确定A": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "港区_排班_点击进行排班_确定.png",
+        "action": "Click",
+        "next": "石油_排班_结束任务"
+    },
+    "石油_排班_结束任务": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": "Click"
+    }    
+}

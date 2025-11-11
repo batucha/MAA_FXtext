@@ -1,0 +1,28 @@
+{
+    "关闭_快速领取": {
+        "recognition": "TemplateMatch",
+        "template": "关闭_快速领取.png",
+        "action": "Click"
+    },
+    "关闭_聊天框": {
+        "recognition": "TemplateMatch",
+        "template": "关闭_聊天框.png",
+        "action": "Click"
+    },
+    "关闭_排班": {
+        "recognition": "TemplateMatch",
+        "template": "关闭_排班.png",
+        "action": "Click"
+    },
+    "关闭_排班_确定": {
+        "recognition": "TemplateMatch",
+        "template": "关闭_排班_确定.png",
+        "action": "Click"
+    },    
+    "关闭_签到": {
+        "recognition": "TemplateMatch",
+        "template": "关闭_签到.png",
+        "action": "Click"
+        
+    }
+}

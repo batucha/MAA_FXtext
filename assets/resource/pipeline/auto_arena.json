@@ -83,7 +83,8 @@
             }
         },
         "action": "Click",
-        "next":"竞技_启航"
+        "next":"竞技_启航",
+        "interrupt":"竞技_点击战斗"
     },
     "竞技_启航":{
         "post_delay": 1000,
@@ -102,6 +103,7 @@
     "竞技_持续结束检测": {
         "post_delay": 1000,
         "pre_wait_freezes": 600000,
+        "timeout":600000,
         "recognition": "TemplateMatch",
         "template": "竞技_点击继续.png",
         "next": "竞技_点击_点击继续",
@@ -126,14 +128,26 @@
 
     "竞技_确认竞技次数清空":{
         "post_delay": 1000,
-        "recognition": "TemplateMatch",
-        "template": "竞技_竞技次数清空.png",
-        "next": "竞技_二次确认竞技次数清空"        
+        "recognition":{
+            "type":"TemplateMatch",
+            "param": {
+                "template": "竞技_竞技次数清空.png",
+                "threshold": [0.9]
+            }
+        },     
+        "next": "竞技_二次确认竞技次数清空",
+        "interrupt": "竞技_检查主界面" 
     },
     "竞技_二次确认竞技次数清空":{
-        "recognition": "TemplateMatch",
-        "template": "竞技_竞技次数清空.png",
-        "next": "竞技_结束任务"
+        "post_delay": 1000,
+        "recognition":{
+            "type":"TemplateMatch",
+            "param": {
+                "template": "竞技_竞技次数清空.png",
+                "threshold": [0.9]
+            }
+        },     
+        "next": "竞技_结束任务"  
     },
 
     "竞技_结束任务":{

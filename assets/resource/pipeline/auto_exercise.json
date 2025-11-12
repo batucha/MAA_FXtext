@@ -55,11 +55,24 @@
             "演习_确认刷新次数清空"
         ],
         "interrupt": [
-            "演习_点击连续挑战"
+            "演习_点击连续挑战",
+            "演习_点击_点击继续"
         ]
     },
 
-
+    "演习_点击_点击继续":{
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "演习_点击继续.png",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [0,0,1,1]
+            }
+        },
+        "interrupt":"竞技_点击_点击继续",
+        "next":"演习_战斗"
+    },
 
 
     "演习_点击连续挑战": {

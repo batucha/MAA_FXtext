@@ -1,0 +1,399 @@
+{
+    "远征_出征": {
+        "next": [
+            "远征coll_回到主界面",
+            "远征coll_检查主界面"
+        ],
+        "interrupt": [
+            "关闭_快速领取",
+            "关闭_聊天框"
+        ]
+    },    
+    "远征coll_回到主界面": {
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": {
+            "type": "Click",
+            "roi": [
+                181,
+                0,
+                119,
+                78
+            ]
+        },
+        "next": "远征coll_检查主界面"
+    },
+    "远征coll_检查主界面": {
+        "recognition": "TemplateMatch",
+        "template": "主页_出击.png",
+        "action": "DoNothing",
+        "next": "远征coll_点击快速领取"
+    },
+    "远征coll_点击快速领取": {
+        "post_delay": 1000, 
+        "recognition": "TemplateMatch",
+        "template": "主页_快速领取.png",
+        "action": "Click",
+        "next": "远征coll_点击远征",
+        "interrupt": [
+            "远征coll_点击快速领取"
+        ]
+    },
+    "远征coll_点击远征": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "任务_远征.png",
+        "action": "Click",
+        "next": "远征coll_全部领取_检测"
+    },
+    "远征coll_全部领取_检测": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "DoNothing",
+        "next": "远征coll_全部领取"
+    },
+    "远征coll_全部领取": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "Click",
+        "next": "远征coll_全部领取1"
+    },
+    "远征coll_全部领取1": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "Click",
+        "next": "远征coll_全部领取2"
+    },
+    "远征coll_全部领取2": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "Click",
+        "next": "远征coll_全部领取3"
+    },
+    "远征coll_全部领取3": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "Click",
+        "next": "远征coll_全部领取4"
+    },
+    "远征coll_全部领取4": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "Click",
+        "next": "远征coll_全部领取5"
+    },
+    "远征coll_全部领取5": {
+        "recognition": "TemplateMatch",
+        "template": "任务_远征_全部领取.png",
+        "action": "Click",
+        "next": "远征coll_确认出击队伍清空"
+    },
+
+    "远征coll_确认出击队伍清空":{
+            "recognition": {
+            "type":"TemplateMatch",
+            "param":{
+                "template":"远征_出击队伍清空.png",
+                "roi" : [1138,56,137,87]
+            }
+        },
+        "timeout": 5000,
+        "next":[
+            "远征coll_进入限时远征",
+            "远征coll_进入每日远征"
+        ],
+        "on_error":"远征coll_确认出击队伍已满"
+    },
+
+
+
+
+
+    "远征coll_确认出击队伍已满":{
+        "next":"远征coll_结束任务"
+    },
+
+
+
+
+
+    "远征coll_进入限时远征":{
+        "recognition": {
+            "type":"TemplateMatch",
+            "param":{
+                "template":"远征_限时远征_12小时.png",
+                "roi" : [1135,625,132,69]
+            }
+        },
+        "action":"Click",
+        "next":"远征_限时远征_选择1"
+    },
+    "远征_限时远征_选择1": {
+    "post_delay": 1000,
+    "recognition": {
+        "type": "TemplateMatch",
+        "param": {
+            "template": "远征_120000.png",
+            "roi": [768,152,225,100]
+        }
+    },
+        "action": "Click",
+        "next": "远征_限时远征_出征1"
+    },
+    "远征_限时远征_出征1": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_出征.png",
+                "roi": [610,720,0,0]
+            }
+        },
+        "action": "Click",
+        "next": "远征_限时远征_选择2"
+    },
+    "远征_限时远征_选择2": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_120000.png",
+                "roi": [765,280,225,97]
+            }
+        },
+        "action": "Click",
+        "next": "远征_限时远征_出征2"
+    },
+    "远征_限时远征_出征2": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_出征.png",
+                "roi": [610,720,0,0]
+            }
+        },
+        "action": "Click",
+        "next": "远征_限时远征_选择3"
+    },
+    "远征_限时远征_选择3": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_120000.png",
+                "roi": [766,408,226,98]
+            }
+        },
+        "action": "Click",
+        "next": "远征_限时远征_出征3"
+    },
+    "远征_限时远征_出征3": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_出征.png",
+                "roi": [610,720,0,0]
+            }
+        },
+        "action": "Click",
+        "next": "远征_限时远征_滑动4A"
+    },
+    "远征_限时远征_滑动4A": {
+        "post_delay": 1000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [964,518,1,1],
+                "end": [962,270,1,1]
+            }
+        },
+        "next": "远征_限时远征_滑动4B"
+    },
+    "远征_限时远征_滑动4B": {
+        "post_delay": 1000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [964,518,1,1],
+                "end": [962,270,1,1]
+            }
+        },
+        "next": "远征_限时远征_选择4"
+    },
+    "远征_限时远征_选择4": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_120000.png",
+                "roi": [768,448,221,100]
+            }
+        },
+        "action": "Click",
+        "next": "远征_限时远征_出征4"
+    },
+    "远征_限时远征_出征4": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_出征.png",
+                "roi": [610,720,0,0]
+            }
+        },
+        "action": "Click",
+        "next": "远征coll_确认出击队伍已满"
+    },
+
+
+
+
+
+
+
+    "远征coll_进入每日远征":{
+        "recognition": {
+            "type":"TemplateMatch",
+            "param":{
+                "template":"远征_每日远征_8小时.png",
+                "roi":[1141,568,123,58]
+            }
+        },
+        "action":"Click",
+        "next":"远征_每日远征_选择1"
+    },
+    "远征_每日远征_选择1": {
+    "post_delay": 1000,
+    "recognition": {
+        "type": "TemplateMatch",
+        "param": {
+            "template": "远征_080000.png",
+            "roi": [768,152,225,100]
+        }
+    },
+        "action": "Click",
+        "next": "远征_每日远征_出征1"
+    },
+    "远征_每日远征_出征1": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_出征.png",
+                "roi": [610,720,0,0]
+            }
+        },
+        "action": "Click",
+        "next": "远征_每日远征_选择2"
+    },
+    "远征_每日远征_选择2": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_080000.png",
+                "roi": [765,280,225,97]
+            }
+        },
+        "action": "Click",
+        "next": "远征_每日远征_出征2"
+    },
+    "远征_每日远征_出征2": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_出征.png",
+                "roi": [610,720,0,0]
+            }
+        },
+        "action": "Click",
+        "next": "远征_每日远征_选择3"
+    },
+    "远征_每日远征_选择3": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_080000.png",
+                "roi": [766,408,226,98]
+            }
+        },
+        "action": "Click",
+        "next": "远征_每日远征_出征3"
+    },
+    "远征_每日远征_出征3": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_出征.png",
+                "roi": [610,720,0,0]
+            }
+        },
+        "action": "Click",
+        "next": "远征_每日远征_滑动4A"
+    },
+    "远征_每日远征_滑动4A": {
+        "post_delay": 1000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [964,518,1,1],
+                "end": [962,270,1,1]
+            }
+        },
+        "next": "远征_每日远征_滑动4B"
+    },
+    "远征_每日远征_滑动4B": {
+        "post_delay": 1000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [964,518,1,1],
+                "end": [962,270,1,1]
+            }
+        },
+        "next": "远征_每日远征_选择4"
+    },
+    "远征_每日远征_选择4": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_080000.png",
+                "roi": [768,448,221,100]
+            }
+        },
+        "action": "Click",
+        "next": "远征_每日远征_出征4"
+    },
+    "远征_每日远征_出征4": {
+        "post_delay": 1000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "远征_出征.png",
+                "roi": [610,720,0,0]
+            }
+        },
+        "action": "Click",
+        "next": "远征coll_确认出击队伍已满"
+    },
+
+
+
+
+
+    "远征coll_结束任务":{
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": {
+            "type": "Click",
+            "roi": [181,0,119,78]
+        }
+    }
+}

@@ -1,35 +1,34 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
-  <img alt="LOGO" src="https://cdn.jsdelivr.net/gh/MaaAssistantArknights/design@main/logo/maa-logo_512x512.png" width="256" height="256" />
+  <img alt="LOGO" src="https://github.com/batucha/hexo_image/blob/main/FXV_%20logo.png" width="256" height="256" />
 </p>
 
 <div align="center">
 
-# MaaPracticeBoilerplate
+# FXV_洛蒙瑞亚荣誉开发
 
 </div>
 
 ## 【开发中】
-本仓库为 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供的项目模板，开发者可基于此模板直接创建自己的 MaaXXX 项目。
+本仓库为 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供的项目模板；MAA_FXV是为舰like游戏：《拂晓·胜利之刻》所开发的减负脚本。请随意使用。欢迎批评指正。
 
-# MAA_FX是为《拂晓·胜利之刻》所开发的减负脚本。
+# 授命于洛蒙瑞亚皇室。为节约指挥官宝贵之刻，FXV竭诚为您服务。
 
-## 已成功运行功能：
+## 已完成功能：
 - 战斗部分
-  - 演习
-  - 竞技场_普通
+  - 自动演习
+  - 自动竞技场（普通）
 - 领取部分
-  - 油_收+排班
-  - 便利店_收+排班
-  - 邮件_收
-  - 远征_收
+  - 收挂炼油厂、便利店
+  - 领取邮件
+  - 收挂远征
+  - 领取每日任务
 
-## 最后更新时间_2025年11月11日22:43:40
+## 最后更新时间_2025年11月12日23:27:03
 
-- 待开发功能：
+# 待开发功能：
   - 登录
   - 打每日副本
-  - 挂远征
   - 商店领油
   - 商店购买
   - 退役
@@ -38,3 +37,7 @@
   - 出击
   - 下线
 
+# 开发/游戏交流群1065149932
+<p align="center">
+  <img alt="LOGO" src="https://github.com/batucha/hexo_image/blob/main/FXV_jbjlq.png" width="256" height="256" />
+</p>

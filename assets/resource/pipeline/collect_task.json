@@ -1,0 +1,79 @@
+{
+    "每日任务_领取": {
+        "next": [
+            "每日任务_回到主界面",
+            "每日任务_检查主界面"
+        ],
+        "interrupt": [
+            "关闭_快速领取",
+            "关闭_聊天框",
+            "关闭_排班",
+            "关闭_排班_确定",
+            "关闭_签到"
+        ]
+    },    
+    "每日任务_回到主界面": {
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": "Click",
+        "next": "每日任务_检查主界面"
+    },
+    "每日任务_检查主界面": {
+        "recognition": "TemplateMatch",
+        "template": "主页_出击.png",
+        "action": "DoNothing",
+        "next": "每日任务_点击任务"
+    },
+
+
+
+    
+    "每日任务_点击任务": {
+        "post_delay": 1000, 
+        "recognition": "TemplateMatch",
+        "template": "主页_任务.png",
+        "action": "Click",
+        "next": "每日任务_点击一键领取1",
+        "interrupt": [
+            "每日任务_点击任务"
+        ]
+    },  
+    "每日任务_点击一键领取1":{
+        "recognition": "TemplateMatch",
+        "template": "每日任务_一键领取.png",
+        "action": "Click",
+        "next": "每日任务_点击一键领取2"
+    },
+    "每日任务_点击一键领取2":{
+        "recognition": "TemplateMatch",
+        "template": "每日任务_一键领取.png",
+        "action": "Click",
+        "next": "每日任务_点击一键领取3"
+    },
+    "每日任务_点击一键领取3":{
+        "recognition": "TemplateMatch",
+        "template": "每日任务_一键领取.png",
+        "action": "Click",
+        "next": "每日任务_点击一键领取4"
+    },
+    "每日任务_点击一键领取4":{
+        "recognition": "TemplateMatch",
+        "template": "每日任务_一键领取.png",
+        "action": "Click",
+        "next": "每日任务_点击一键领取5"
+    },
+    "每日任务_点击一键领取5":{
+        "recognition": "TemplateMatch",
+        "template": "每日任务_一键领取.png",
+        "action": "Click",
+        "next": "每日任务_结束任务"
+    },
+
+
+    "每日任务_结束任务": {
+        "post_delay": 1000,
+        "recognition": "TemplateMatch",
+        "template": "中控_返回主页.png",
+        "action": "Click"
+    }    
+}
